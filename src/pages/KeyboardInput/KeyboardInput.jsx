@@ -30,6 +30,11 @@ function KeyboardInput() {
         This component shows the keyboard input by adding an event listener on
         the window object.
       </p>
+      <p>
+        <a target="blank" href="https://github.com/Ahuanmarca/react-playground/blob/fc9533b6a3cf59bf945d94c80998b907fd2eb306/src/pages/KeyboardInput/KeyboardInput.jsx">
+          code
+        </a>
+      </p>
       <h2>Key: {input.key}</h2>
       <h2>Code: {input.code}</h2>
     </>
