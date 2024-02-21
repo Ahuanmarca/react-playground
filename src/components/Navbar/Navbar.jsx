@@ -9,9 +9,15 @@ function MyNavbar() {
       <Container>
         <Navbar.Brand href="/">React Playground</Navbar.Brand>
         <Nav className="me-auto">
-          <Link className="nav-link" to="/keyboardinput">Keyboard Input</Link>
-          <Nav.Link href="/showmouseposition">Mouse Position</Nav.Link>
-          <Nav.Link href="/sortabletable">Sortable Table</Nav.Link>
+          <Link className="nav-link" to="/keyboardinput">
+            Keyboard Input
+          </Link>
+          <Link className="nav-link" to="/showmouseposition">
+            Mouse Position
+          </Link>
+          <Link className="nav-link" to="/sortabletable">
+            Sortable Table
+          </Link>
         </Nav>
       </Container>
     </Navbar>
