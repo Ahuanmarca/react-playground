@@ -30,7 +30,7 @@ function MousePosition() {
       </p>
       <p>
         <Nav.Link
-          href="https://github.com/Ahuanmarca/react-playground/blob/b7a7cfaa917096354776bad0de7a5d0723734a53/src/pages/MousePosition/MousePosition.jsx"
+          href="https://github.com/Ahuanmarca/react-playground/blob/459684b0a71cba712e3d24376315b864b1f7e583/src/pages/MousePosition/MousePosition.jsx"
           target="blank"
         >
           🔗 code
