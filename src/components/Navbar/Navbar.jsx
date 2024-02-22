@@ -21,6 +21,9 @@ function MyNavbar() {
           <Link className="nav-link" to="/clickcounter">
             Click Counter
           </Link>
+          <Link className="nav-link" to="/driftingtimers">
+            Drifting Timers
+          </Link>
         </Nav>
       </Container>
     </Navbar>
