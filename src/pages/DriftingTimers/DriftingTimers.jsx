@@ -1,31 +1,67 @@
 import React from "react";
+import format from "date-fns/format";
+// react-bootstrap components
+// import Button from "react-bootstrap/Button";
+// My components
 import TimerIntervalOnMount from "./TimerIntervalOnMount";
 import TimerTimeout from "./TimerTimeout";
-import Button from "react-bootstrap/Button";
+import TimerTimeNow from "./TimerTimeNow";
 
 function DriftingTimers() {
-  const [speed, setSpeed] = React.useState(1000);
+  const [stopwatchTime, setStopwatchTime] = React.useState(0);
+  const [time, setTime] = React.useState(new Date());
+
+  React.useEffect(() => {
+    const interval = window.setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  React.useEffect(() => console.log(format(time, "hh:mm:ss")), [time]);
 
   return (
     <>
       <h1>Drifting Timers</h1>
       <p>
-        This components shows how different timers will drift from each other,
-        even though both timers are set with a 1000 milliseconds delay. The
-        first timer uses <code>useEffect</code> to add a{" "}
-        <code>setInterval</code> on the window object when the component mounts.
-        The timeout only starts once and runs for the compoment life. The second
-        timer uses <code>useEffect</code> to add a <code>setTimeout</code> on
-        the window object when the component mounts, and when the time state
-        changes. The timeout needs to be added on every render.
+        These timers show the seconds elapsed since page load,{" "}
+        <strong>or at least they are supposed to!</strong> They may drift away
+        from each other, depending on the activity on your machine.
+        <ul>
+          <li>
+            The first timer uses <code>Date.now()</code> to update it&#39;s
+            value, so it won&#39;t drift.
+          </li>
+          <li>
+            The second timer adds <code>setInterval</code> to the window. The
+            event listener is added only when the component mounts.
+          </li>
+          <li>
+            The third timer adds <code>setTimeout</code> to the window. The
+            timeout must be added again with every render.
+          </li>
+        </ul>
       </p>
+      {/* <p>Current speed: {speed === 1000 ? "1000ms" : "1ms"}</p> */}
+      {/* <div> */}
+      {/* <Button onClick={() => setSpeed(1000)}>Seconds</Button>{" "} */}
+      {/* <Button onClick={() => setSpeed(1)}>Milliseconds</Button> */}
+      {/* </div> */}
+      <hr />
+      <h2>Clock: {format(time, "hh:mm:ss")}</h2>
+      <div className="mt-3">
+        <TimerTimeNow />
+        <TimerIntervalOnMount />
+        <TimerTimeout />
+      </div>
+      <hr />
       <div>
-        <Button onClick={() => setSpeed(1000)} >Seconds</Button>{" "}
-        <Button onClick={() => setSpeed(1)}>Milliseconds</Button>
-      </div><hr />
-      <div className='mt-3'>
-        <TimerIntervalOnMount speed={speed} />
-        <TimerTimeout speed={speed} />
+        <p>
+          Sometimes the timers quickly drift from each other, sometimes they
+          stay in sync for a long time. I believe it depends on the activity on
+          your machine.
+        </p>
       </div>
     </>
   );
