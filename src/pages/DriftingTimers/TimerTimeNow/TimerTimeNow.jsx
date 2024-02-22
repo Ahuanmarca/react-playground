@@ -14,7 +14,6 @@ function TimerDateNow() {
   return (
     <>
       <h2>Timer with <code>Date.now()</code>: {globalTime}</h2>
-      {/* <p>This timer updates by the Time.now() function.</p> */}
     </>
   );
 }

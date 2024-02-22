@@ -1,14 +1,10 @@
 import React from "react";
 import format from "date-fns/format";
-// react-bootstrap components
-// import Button from "react-bootstrap/Button";
-// My components
 import TimerIntervalOnMount from "./TimerIntervalOnMount";
 import TimerTimeout from "./TimerTimeout";
 import TimerTimeNow from "./TimerTimeNow";
 
 function DriftingTimers() {
-  const [stopwatchTime, setStopwatchTime] = React.useState(0);
   const [time, setTime] = React.useState(new Date());
 
   React.useEffect(() => {
@@ -43,11 +39,6 @@ function DriftingTimers() {
           </li>
         </ul>
       </p>
-      {/* <p>Current speed: {speed === 1000 ? "1000ms" : "1ms"}</p> */}
-      {/* <div> */}
-      {/* <Button onClick={() => setSpeed(1000)}>Seconds</Button>{" "} */}
-      {/* <Button onClick={() => setSpeed(1)}>Milliseconds</Button> */}
-      {/* </div> */}
       <hr />
       <h2>Clock: {format(time, "hh:mm:ss")}</h2>
       <div className="mt-3">
@@ -58,9 +49,9 @@ function DriftingTimers() {
       <hr />
       <div>
         <p>
-          Sometimes the timers quickly drift from each other, sometimes they
-          stay in sync for a long time. I believe it depends on the activity on
-          your machine.
+          Sometimes the timers quickly drift away from each other, sometimes
+          they stay in sync for a long time. I believe it depends on the
+          activity on your machine.
         </p>
       </div>
     </>
