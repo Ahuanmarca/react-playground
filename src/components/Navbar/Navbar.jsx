@@ -18,6 +18,9 @@ function MyNavbar() {
           <Link className="nav-link" to="/sortabletable">
             Sortable Table
           </Link>
+          <Link className="nav-link" to="/clickcounter">
+            Click Counter
+          </Link>
         </Nav>
       </Container>
     </Navbar>

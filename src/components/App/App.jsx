@@ -7,6 +7,7 @@ import Home from "../../pages/Home";
 import KeyboardInput from "../../pages/KeyboardInput";
 import MousePosition from "../../pages/MousePosition";
 import SortableTable from "../../pages/SortableTable"
+import ClickCounter from "../../pages/ClickCounter";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/keyboardinput" element={<KeyboardInput />} />
           <Route path="/showmouseposition" element={<MousePosition />} />
           <Route path="/sortabletable" element={<SortableTable />} />
+          <Route path="/clickcounter" element={<ClickCounter />} />
         </Routes>
       </Container>
     </>
