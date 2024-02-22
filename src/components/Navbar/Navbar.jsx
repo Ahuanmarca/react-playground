@@ -9,6 +9,9 @@ function MyNavbar() {
       <Container>
         <Navbar.Brand href="/">React Playground</Navbar.Brand>
         <Nav className="me-auto">
+          <Link className="nav-link" to="/loginform">
+            Login Form
+          </Link>
           <Link className="nav-link" to="/keyboardinput">
             Keyboard Input
           </Link>

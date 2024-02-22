@@ -21,7 +21,7 @@ function DriftingTimers() {
   return (
     <>
       <h1>Drifting Timers</h1>
-      <p>
+      <div>
         These timers show the seconds elapsed since page load,{" "}
         <strong>or at least they are supposed to!</strong> They may drift away
         from each other, depending on the activity on your machine.
@@ -39,7 +39,7 @@ function DriftingTimers() {
             timeout must be added again with every render.
           </li>
         </ul>
-      </p>
+      </div>
       <hr />
       <h2>Clock: {format(time, "hh:mm:ss")}</h2>
       <div className="mt-3">

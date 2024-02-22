@@ -9,6 +9,7 @@ import MousePosition from "../../pages/MousePosition";
 import SortableTable from "../../pages/SortableTable"
 import ClickCounter from "../../pages/ClickCounter";
 import DriftingTimers from '../../pages/DriftingTimers';
+import LoginForm from '../../pages/LoginForm';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/sortabletable" element={<SortableTable />} />
           <Route path="/clickcounter" element={<ClickCounter />} />
           <Route path="/driftingtimers" element={<DriftingTimers />} />
+          <Route path="/loginform" element={<LoginForm />} />
         </Routes>
       </Container>
     </>
