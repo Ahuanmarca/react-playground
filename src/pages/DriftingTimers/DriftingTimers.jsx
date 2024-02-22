@@ -3,6 +3,7 @@ import format from "date-fns/format";
 import TimerIntervalOnMount from "./TimerIntervalOnMount";
 import TimerTimeout from "./TimerTimeout";
 import TimerTimeNow from "./TimerTimeNow";
+import Nav from 'react-bootstrap/Nav';
 
 function DriftingTimers() {
   const [time, setTime] = React.useState(new Date());
@@ -52,6 +53,9 @@ function DriftingTimers() {
           Sometimes the timers quickly drift away from each other, sometimes
           they stay in sync for a long time. I believe it depends on the
           activity on your machine.
+        </p>
+        <p>
+          <Nav.Link href="https://github.com/Ahuanmarca/react-playground/blob/7f003aa830c3238db9cc91af7c4240fb002ea1c0/src/pages/DriftingTimers/DriftingTimers.jsx" target="blank">🔗 <u>code</u></Nav.Link>
         </p>
       </div>
     </>
