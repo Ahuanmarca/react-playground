@@ -12,6 +12,9 @@ function MyNavbar() {
           <Link className="nav-link" to="/loginform">
             Login Form
           </Link>
+          <Link className='nav-link' to="/languageselector">
+            Language Selector
+          </Link>
           <Link className="nav-link" to="/keyboardinput">
             Keyboard Input
           </Link>
