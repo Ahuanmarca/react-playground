@@ -34,7 +34,7 @@ function App() {
           </Routes>
         </div>
       </div>
-      {showLoginModal && <LoginModal dismissMe={toggleShowLoginModal} />}
+      {showLoginModal && <LoginModal handleDismiss={toggleShowLoginModal} />}
     </>
   );
 }

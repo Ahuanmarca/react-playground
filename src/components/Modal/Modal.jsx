@@ -1,12 +1,12 @@
-import React from "react";
+// import React from "react";
 import FocusLock from "react-focus-lock";
 import { RemoveScroll } from "react-remove-scroll";
 import { X as Close } from "react-feather";
 import VisuallyHidden from "../VisuallyHidden";
-
+import useKeyDown from "../../hooks/use-keydown";
 import styles from "./Modal.module.css";
 
-function Modal({ title, dismissMe, children }) {
+function Modal({ title, handleDismiss, children }) {
 
   /**
    * MANAGING FOCUS
@@ -24,21 +24,13 @@ function Modal({ title, dismissMe, children }) {
   //   return () => currentlyFocusedElement?.focus();
   // }, []);
 
-  React.useEffect(() => {
-    function handleKeyDown(e) {
-      if (e.code === "Escape") {
-        dismissMe();
-      }
-    }
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [dismissMe]);
+  useKeyDown("Escape", handleDismiss);
 
   return (
     <FocusLock returnFocus={true}>
       <RemoveScroll>
         <div className={styles.wrapper}>
-          <div className={styles.backdrop} onClick={dismissMe} />
+          <div className={styles.backdrop} onClick={handleDismiss} />
           <div
             className={styles.dialog}
             role="dialog"
@@ -47,7 +39,7 @@ function Modal({ title, dismissMe, children }) {
           >
             <button
               className={styles.closeBtn}
-              onClick={dismissMe}
+              onClick={handleDismiss}
               // ref={closeButtonRef}
             >
               <Close />

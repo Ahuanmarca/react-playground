@@ -2,9 +2,9 @@
 import Modal from "../Modal";
 import LoginForm from "../../pages/LoginForm"
 
-function LoginModal({ dismissMe }) {
+function LoginModal({ handleDismiss }) {
   return (
-    <Modal title="Login Form" dismissMe={dismissMe}>
+    <Modal title="Login Form" handleDismiss={handleDismiss}>
       <LoginForm />
     </Modal>
   );
