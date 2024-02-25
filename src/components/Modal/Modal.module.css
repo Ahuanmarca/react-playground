@@ -27,4 +27,6 @@
   color: white;
   transform: translateY(-100%);
   cursor: pointer;
+  background: transparent;
+  border: none;
 }

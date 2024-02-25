@@ -4,7 +4,7 @@ import LoginForm from "../../pages/LoginForm"
 
 function LoginModal({ dismissMe }) {
   return (
-    <Modal dismissMe={dismissMe}>
+    <Modal title="Login Form" dismissMe={dismissMe}>
       <LoginForm />
     </Modal>
   );
