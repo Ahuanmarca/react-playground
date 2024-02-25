@@ -3,15 +3,15 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 
-function MyNavbar() {
+function MyNavbar({ showLoginModal }) {
   return (
     <Navbar className="sticky-top bg-body-tertiary" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="/">React Playground</Navbar.Brand>
+        <Link className="navbar-brand" to="/">Playground</Link>
         <Nav className="me-auto">
-          <Link className="nav-link" to="/loginform">
-            Login
-          </Link>
+          <button className="nav-link" onClick={showLoginModal}>
+            Login Modal
+          </button>
         </Nav>
       </Container>
     </Navbar>

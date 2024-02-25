@@ -1,3 +1,5 @@
+// import React from "react";
+import useToggle from "../../hooks/use-toggle";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
@@ -9,11 +11,14 @@ import ClickCounter from "../../pages/ClickCounter";
 import DriftingTimers from "../../pages/DriftingTimers";
 import LoginForm from "../../pages/LoginForm";
 import LanguageSelector from "../../pages/LanguageSelector";
+import LoginModal from "../../components/LoginModal";
 
 function App() {
+  const [showLoginModal, toggleShowLoginModal] = useToggle(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar showLoginModal={toggleShowLoginModal} />
       <div style={{ display: "flex" }}>
         <Sidebar />
         <div className="mt-3" style={{ paddingLeft: "20px" }}>
@@ -29,6 +34,7 @@ function App() {
           </Routes>
         </div>
       </div>
+      {showLoginModal && <LoginModal dismissMe={toggleShowLoginModal} />}
     </>
   );
 }

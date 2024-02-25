@@ -70,15 +70,6 @@ function Sidebar() {
                 Language Selector
               </Link>
             </Nav.Item>
-            <Nav.Item eventKey="7"  icon={<MagicIcon />}>
-              <Link
-                onClick={() => setActiveLink("7")}
-                className="nav-link"
-                to="/loginform"
-              >
-                Login From
-              </Link>
-            </Nav.Item>
 
             <Nav.Menu eventKey="9" title="Settings" icon={<GearCircleIcon />}>
               <Nav.Item eventKey="9-1">Applications</Nav.Item>
