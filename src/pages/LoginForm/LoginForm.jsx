@@ -7,8 +7,8 @@ const ENDPOINT = "https://bytebazaar-api.onrender.com/auth/login";
 
 function LoginForm() {
   const [input, setInput] = React.useState({
-    email: "jane@jane.ja",
-    password: "jane",
+    email: "",
+    password: "",
   });
   const [showPassword, setShowPassword] = React.useState(false);
   // idle / loading / success / error
@@ -92,9 +92,7 @@ function LoginForm() {
               value={input.email}
               onChange={handleChange}
             />
-            <Form.Text className="text-muted">
-              We don&#39;t share your information
-            </Form.Text>
+            <Form.Text className="text-muted">HINT: jane@jane.ja</Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3">
@@ -108,6 +106,7 @@ function LoginForm() {
               value={input.password}
               onChange={handleChange}
             />
+            <Form.Text className="text-muted">HINT: jane</Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3">
