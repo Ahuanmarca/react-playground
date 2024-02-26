@@ -12,6 +12,7 @@ import DriftingTimers from "../../pages/DriftingTimers";
 import LoginForm from "../../pages/LoginForm";
 import LanguageSelector from "../../pages/LanguageSelector";
 import LoginModal from "../../components/LoginModal";
+import GameList from "../GameList";
 
 function App() {
   const [showLoginModal, toggleShowLoginModal] = useToggle(false);
@@ -31,6 +32,7 @@ function App() {
             <Route path="/driftingtimers" element={<DriftingTimers />} />
             <Route path="/loginform" element={<LoginForm />} />
             <Route path="/languageselector" element={<LanguageSelector />} />
+            <Route path="/gamelist" element={<GameList />} />
           </Routes>
         </div>
       </div>
