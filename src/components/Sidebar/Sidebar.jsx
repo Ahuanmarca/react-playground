@@ -9,14 +9,35 @@ import MagicIcon from "@rsuite/icons/legacy/Magic";
 import GearCircleIcon from "@rsuite/icons/legacy/GearCircle";
 
 const SIDEBAR_LINKS = [
-  { to: "/showmouseposition", title: "Mouse Position", icon: <DashboardIcon /> },
+  {
+    to: "/showmouseposition",
+    title: "Mouse Position",
+    icon: <DashboardIcon />,
+  },
   { to: "/keyboardinput", title: "Keyboard Input", icon: <GroupIcon /> },
   { to: "/clickcounter", title: "Click Counter", icon: <MagicIcon /> },
   { to: "/driftingtimers", title: "Drifting Timers", icon: <MagicIcon /> },
   { to: "/sortabletable", title: "Sortable Table", icon: <MagicIcon /> },
   { to: "/languageselector", title: "Language Selector", icon: <MagicIcon /> },
   { to: "/gamelist", title: "Game List", icon: <MagicIcon /> },
-]
+  { to: "/programmingjokes", title: "Programming Jokes", icon: <MagicIcon /> },
+  { to: '/fetchingonmount', title: 'Fetching on mount', icon: <MagicIcon/> },
+];
+
+function NavItem({ to, title, icon, setActiveLink }) {
+
+  return (
+    <Nav.Item key={to} eventKey={to} icon={icon}>
+      <Link
+        onClick={() => setActiveLink(to)}
+        className="nav-link"
+        to={to}
+      >
+        {title}
+      </Link>
+    </Nav.Item>
+  );
+}
 
 function Sidebar() {
   const [activeLink, setActiveLink] = React.useState("1");
@@ -26,77 +47,14 @@ function Sidebar() {
       <Sidenav defaultOpenKeys={[]} style={{ width: 200 }}>
         <Sidenav.Body>
           <Nav activeKey={activeLink}>
-            {SIDEBAR_LINKS.map((link, index) => {
+            {/* Mapping the links! */}
+            {SIDEBAR_LINKS.map((link) => {
               return (
-                <Nav.Item key={index} eventKey={index + 1} icon={link.icon}>
-                  <Link
-                    onClick={() => setActiveLink(index + 1)}
-                    className="nav-link"
-                    to={link.to}
-                  >
-                    {link.title}
-                  </Link>
-                </Nav.Item>
-              );
+                <NavItem key={link.to} setActiveLink={setActiveLink} {...link} />
+              )
             })}
 
-
-            {/* <Nav.Item eventKey="1" icon={<DashboardIcon />}>
-              <Link
-                onClick={() => setActiveLink("1")}
-                className="nav-link"
-                to="/showmouseposition"
-              >
-                Mouse Position
-              </Link>
-            </Nav.Item>
-            <Nav.Item eventKey="2" icon={<GroupIcon />}>
-              <Link
-                onClick={() => setActiveLink("2")}
-                className="nav-link"
-                to="/keyboardinput"
-              >
-                Keyboard Input
-              </Link>
-            </Nav.Item>
-            <Nav.Item eventKey="3" icon={<MagicIcon />}>
-              <Link
-                onClick={() => setActiveLink("3")}
-                className="nav-link"
-                to="/clickcounter"
-              >
-                Click Counter
-              </Link>
-            </Nav.Item>
-            <Nav.Item eventKey="4" icon={<MagicIcon />}>
-              <Link
-                onClick={() => setActiveLink("4")}
-                className="nav-link"
-                to="/driftingtimers"
-              >
-                Drifting Timers
-              </Link>
-            </Nav.Item>
-            <Nav.Item eventKey="5" icon={<MagicIcon />}>
-              <Link
-                onClick={() => setActiveLink("5")}
-                className="nav-link"
-                to="/sortabletable"
-              >
-                Sortable Table
-              </Link>
-            </Nav.Item>
-            <Nav.Item eventKey="6"  icon={<MagicIcon />}>
-              <Link
-                onClick={() => setActiveLink("6")}
-                className="nav-link"
-                to="/languageselector"
-              >
-                Language Selector
-              </Link>
-            </Nav.Item> */}
-
-            <Nav.Menu eventKey="9" title="Settings" icon={<GearCircleIcon />}>
+            <Nav.Menu eventKey="9" title="Data Fetching" icon={<GearCircleIcon />}>
               <Nav.Item eventKey="9-1">Applications</Nav.Item>
               <Nav.Item eventKey="9-2">Channels</Nav.Item>
               <Nav.Item eventKey="9-3">Versions</Nav.Item>

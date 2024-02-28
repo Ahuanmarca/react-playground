@@ -13,6 +13,9 @@ import LoginForm from "../../pages/LoginForm";
 import LanguageSelector from "../../pages/LanguageSelector";
 import LoginModal from "../../components/LoginModal";
 import GameList from "../GameList";
+import ProgrammingJokes from "../ProgrammingJokes";
+
+import FetchingOnMount from "../../pages/ReactHooks/DataFetching/FetchingOnMount"
 
 function App() {
   const [showLoginModal, toggleShowLoginModal] = useToggle(false);
@@ -33,6 +36,8 @@ function App() {
             <Route path="/loginform" element={<LoginForm />} />
             <Route path="/languageselector" element={<LanguageSelector />} />
             <Route path="/gamelist" element={<GameList />} />
+            <Route path="/programmingjokes" element={<ProgrammingJokes />} />
+            <Route path="/fetchingonmount" element={<FetchingOnMount />} />
           </Routes>
         </div>
       </div>
