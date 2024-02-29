@@ -12,6 +12,7 @@
     "new-component": "new-component"
   },
   "dependencies": {
+    "@radix-ui/react-form": "^0.0.3",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
     "date-fns": "^3.3.1",

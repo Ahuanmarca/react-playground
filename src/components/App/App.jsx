@@ -14,6 +14,7 @@ import LanguageSelector from '../../pages/LanguageSelector';
 import LoginModal from '../../components/LoginModal';
 import GameList from '../GameList';
 
+import FetchingOnEvent from '../../pages/ReactHooks/DataFetching/FetchingOnEvent';
 import FetchingOnMount from '../../pages/ReactHooks/DataFetching/FetchingOnMount';
 import ProgrammingJokes from '../../pages/ReactHooks/DataFetching/ProgrammingJokes';
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="/loginform" element={<LoginForm />} />
             <Route path="/languageselector" element={<LanguageSelector />} />
             <Route path="/gamelist" element={<GameList />} />
+            <Route path="/fetchingonevent" element={<FetchingOnEvent />} />
             <Route path="/fetchingonmount" element={<FetchingOnMount />} />
             <Route path="/programmingjokes" element={<ProgrammingJokes />} />
           </Routes>

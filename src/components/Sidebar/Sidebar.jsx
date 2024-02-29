@@ -16,7 +16,8 @@ const SIDEBAR_LINKS = [
   { to: "/sortabletable", title: "Sortable Table", icon: <MagicIcon /> },
   { to: "/languageselector", title: "Language Selector", icon: <MagicIcon /> },
   { to: "/gamelist", title: "Game List", icon: <MagicIcon /> },
-  { to: '/fetchingonmount', title: 'Fetching on mount', icon: <MagicIcon/> },
+  { to: "/fetchingonevent", title: "Fetching on Event", icon: <MagicIcon /> },
+  { to: '/fetchingonmount', title: 'Fetching on mount', icon: <MagicIcon /> },
   { to: "/programmingjokes", title: "Programming Jokes", icon: <MagicIcon /> },
 ];
 
