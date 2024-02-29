@@ -9,19 +9,15 @@ import MagicIcon from "@rsuite/icons/legacy/Magic";
 import GearCircleIcon from "@rsuite/icons/legacy/GearCircle";
 
 const SIDEBAR_LINKS = [
-  {
-    to: "/showmouseposition",
-    title: "Mouse Position",
-    icon: <DashboardIcon />,
-  },
+  { to: "/showmouseposition", title: "Mouse Position", icon: <DashboardIcon /> },
   { to: "/keyboardinput", title: "Keyboard Input", icon: <GroupIcon /> },
   { to: "/clickcounter", title: "Click Counter", icon: <MagicIcon /> },
   { to: "/driftingtimers", title: "Drifting Timers", icon: <MagicIcon /> },
   { to: "/sortabletable", title: "Sortable Table", icon: <MagicIcon /> },
   { to: "/languageselector", title: "Language Selector", icon: <MagicIcon /> },
   { to: "/gamelist", title: "Game List", icon: <MagicIcon /> },
-  { to: "/programmingjokes", title: "Programming Jokes", icon: <MagicIcon /> },
   { to: '/fetchingonmount', title: 'Fetching on mount', icon: <MagicIcon/> },
+  { to: "/programmingjokes", title: "Programming Jokes", icon: <MagicIcon /> },
 ];
 
 function NavItem({ to, title, icon, setActiveLink }) {
