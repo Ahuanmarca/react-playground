@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import useToggle from '../../../hooks/use-toggle';
+import { CODE_LINKS } from '../../../data/links';
 
 const ENDPOINT =
   'https://official-joke-api.appspot.com/jokes/programming/random';
@@ -51,6 +52,14 @@ function ProgrammingJokes() {
           </>
         )}
       </div>
+      <p>
+        <a
+          href={CODE_LINKS.programmingJokes}
+          target='blank'
+        >
+          🔗 code
+        </a>
+      </p>
     </>
   );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-const ENDPOINT = "https://jor-test-api.vercel.app/api/contact";
+const ENDPOINT = 'https://jor-test-api.vercel.app/api/contact';
 // To simulate error use -> 'https://jor-test-api.vercel.app/api/contact?simulatedError=true';
 import * as Form from '@radix-ui/react-form';
+import { CODE_LINKS } from '../../../data/links';
 
 function FetchingOnEvent() {
   const [email, setEmail] = React.useState('');
@@ -86,18 +87,18 @@ function FetchingOnEvent() {
         {/* <Form.ValidityState /> */}
 
         <Form.Submit asChild>
-          <button
-            disabled={status === 'loading'}
-          >
-            {status === 'loading'
-              ? 'Submitting...'
-              : 'Post Question'
-            }
+          <button disabled={status === 'loading'}>
+            {status === 'loading' ? 'Submitting...' : 'Post Question'}
           </button>
         </Form.Submit>
         {status === 'success' && <p>Message sent!</p>}
         {status === 'error' && <p>Something went wrong!</p>}
       </Form.Root>
+      <p>
+        <a href={CODE_LINKS.fetchingOnEvent} target="blank">
+          🔗 code
+        </a>
+      </p>
     </>
   );
 }

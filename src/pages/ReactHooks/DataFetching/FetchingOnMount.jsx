@@ -1,6 +1,8 @@
 // import React from 'react';
 import useSWR from 'swr';
 import useToggle from '../../../hooks/use-toggle';
+import { CODE_LINKS } from '../../../data/links';
+
 
 const ENDPOINT = 'https://jor-test-api.vercel.app/api/get-temperature';
 const ERROR_ENDPOINT = 'https://jor-test-api.vercel.app/api/get-temperature?simulatedError=true'
@@ -55,6 +57,14 @@ function FetchingOnMount() {
       {typeof data?.temperature === 'number' && (
         <span>{data.temperature}°C</span>
       )}
+      <p>
+        <a
+          href={CODE_LINKS.fetchingOnMount}
+          target="blank"
+        >
+          🔗 code
+        </a>
+      </p>
     </>
   );
 }

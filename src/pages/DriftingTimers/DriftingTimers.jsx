@@ -1,9 +1,10 @@
-import React from "react";
-import format from "date-fns/format";
-import TimerIntervalOnMount from "./TimerIntervalOnMount";
-import TimerTimeout from "./TimerTimeout";
-import TimerTimeNow from "./TimerTimeNow";
+import React from 'react';
+import format from 'date-fns/format';
+import TimerIntervalOnMount from './TimerIntervalOnMount';
+import TimerTimeout from './TimerTimeout';
+import TimerTimeNow from './TimerTimeNow';
 import Nav from 'react-bootstrap/Nav';
+import { CODE_LINKS } from '../../data/links';
 
 function DriftingTimers() {
   const [time, setTime] = React.useState(new Date());
@@ -16,13 +17,13 @@ function DriftingTimers() {
     return () => window.clearInterval(interval);
   }, []);
 
-  React.useEffect(() => console.log(format(time, "hh:mm:ss")), [time]);
+  React.useEffect(() => console.log(format(time, 'hh:mm:ss')), [time]);
 
   return (
     <>
       <h1>Drifting Timers</h1>
       <div>
-        These timers show the seconds elapsed since page load,{" "}
+        These timers show the seconds elapsed since page load,{' '}
         <strong>or at least they are supposed to!</strong> They may drift away
         from each other, depending on the activity on your machine.
         <ul>
@@ -41,7 +42,7 @@ function DriftingTimers() {
         </ul>
       </div>
       <hr />
-      <h2>Clock: {format(time, "hh:mm:ss")}</h2>
+      <h2>Clock: {format(time, 'hh:mm:ss')}</h2>
       <div className="mt-3">
         <TimerTimeNow />
         <TimerIntervalOnMount />
@@ -55,7 +56,12 @@ function DriftingTimers() {
           activity on your machine.
         </p>
         <p>
-          <Nav.Link href="https://github.com/Ahuanmarca/react-playground/blob/7f003aa830c3238db9cc91af7c4240fb002ea1c0/src/pages/DriftingTimers/DriftingTimers.jsx" target="blank">🔗 <u>code</u></Nav.Link>
+          <Nav.Link
+            href={CODE_LINKS.driftingTimers}
+            target="blank"
+          >
+            🔗 <u>code</u>
+          </Nav.Link>
         </p>
       </div>
     </>

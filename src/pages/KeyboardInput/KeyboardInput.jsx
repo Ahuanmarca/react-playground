@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
+import { CODE_LINKS } from "../../data/links";
 
 function KeyboardInput() {
   const [input, setInput] = React.useState({
@@ -49,7 +50,7 @@ function KeyboardInput() {
       <p>
         <Nav.Link
           target="blank"
-          href="https://github.com/Ahuanmarca/react-playground/blob/fc9533b6a3cf59bf945d94c80998b907fd2eb306/src/pages/KeyboardInput/KeyboardInput.jsx"
+          href={CODE_LINKS.keyboardInput}
         >
           🔗 code
         </Nav.Link>

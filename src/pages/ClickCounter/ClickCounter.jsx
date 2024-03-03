@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
+import { CODE_LINKS } from "../../data/links";
 
 function ClickCounter() {
   const [clicks, setClicks] = React.useState(0);
@@ -20,7 +21,7 @@ function ClickCounter() {
       </p>
       <p>
         <Nav.Link
-          href="https://github.com/Ahuanmarca/react-playground/blob/51331f2a7d063b5a6f7b550811a04fe153369b99/src/pages/ClickCounter/ClickCounter.jsx"
+          href={CODE_LINKS.clickCounter}
           target="blank"
         >
           code

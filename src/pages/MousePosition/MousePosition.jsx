@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
+import { CODE_LINKS } from "../../data/links";
 
 function MousePosition() {
   const [mousePosition, setMousePosition] = React.useState({
@@ -30,7 +31,7 @@ function MousePosition() {
       </p>
       <p>
         <Nav.Link
-          href="https://github.com/Ahuanmarca/react-playground/blob/459684b0a71cba712e3d24376315b864b1f7e583/src/pages/MousePosition/MousePosition.jsx"
+          href={CODE_LINKS.mousePosition}
           target="blank"
         >
           🔗 code

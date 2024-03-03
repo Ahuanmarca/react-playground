@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { AuthContext } from "../../contexts/authContext";
+import { CODE_LINKS } from "../../data/links";
 
 const ENDPOINT = "https://bytebazaar-api.onrender.com/auth/login";
 
@@ -132,6 +133,14 @@ function LoginForm() {
           Logout
         </Button>
       )}
+      <p>
+        <a
+          href={CODE_LINKS.loginForm}
+          target='blank'
+        >
+          🔗 code
+        </a>
+      </p>
     </>
   );
 }
