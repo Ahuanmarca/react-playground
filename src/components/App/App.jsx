@@ -14,9 +14,11 @@ import LanguageSelector from '../../pages/LanguageSelector';
 import LoginModal from '../../components/LoginModal';
 import GameList from '../GameList';
 
+import AudioPlayer from '../../pages/ReactHooks/StaleValues/AudioPlayer';
 import FetchingOnEvent from '../../pages/ReactHooks/DataFetching/FetchingOnEvent';
 import FetchingOnMount from '../../pages/ReactHooks/DataFetching/FetchingOnMount';
 import ProgrammingJokes from '../../pages/ReactHooks/DataFetching/ProgrammingJokes';
+import BookSearch from '../../pages/ReactHooks/DataFetching/BookSearch';
 
 function App() {
   const [showLoginModal, toggleShowLoginModal] = useToggle(false);
@@ -40,6 +42,8 @@ function App() {
             <Route path="/fetchingonevent" element={<FetchingOnEvent />} />
             <Route path="/fetchingonmount" element={<FetchingOnMount />} />
             <Route path="/programmingjokes" element={<ProgrammingJokes />} />
+            <Route path="/booksearch" element={<BookSearch />} />
+            <Route path="/audioplayer" element={<AudioPlayer />} />
           </Routes>
         </div>
       </div>
