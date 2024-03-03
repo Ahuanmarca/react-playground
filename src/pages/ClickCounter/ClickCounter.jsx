@@ -11,6 +11,18 @@ function ClickCounter() {
     return () => (document.title = "React Playground");
   }, [clicks]);
 
+  function badAddThree() {
+    setClicks(clicks + 1);
+    setClicks(clicks + 1);
+    setClicks(clicks + 1);
+  }
+
+  function goodAddThree() {
+    setClicks((prev) => prev + 1);
+    setClicks((prev) => prev + 1);
+    setClicks((prev) => prev + 1);
+  }
+
   return (
     <>
       <h1>Click Counter</h1>
@@ -33,6 +45,12 @@ function ClickCounter() {
       </Button>{" "}
       <Button onClick={() => setClicks(0)} variant="danger">
         Reset count
+      </Button>{" "}
+      <Button onClick={badAddThree} variant="warning">
+        Bad Add Three
+      </Button>{" "}
+      <Button onClick={goodAddThree} variant="success">
+        Good Add Three
       </Button>
     </>
   );
