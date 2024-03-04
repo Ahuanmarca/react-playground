@@ -1,10 +1,12 @@
+import BookSearch from '../../../components/BookSearch/BookSearch';
 
-
-function BookSearch() {
-
+function BookSearchPage() {
   return (
-    <h1>Book Search</h1>
+    <>
+      <h1>Book Search</h1>
+      <BookSearch />
+    </>
   );
 }
 
-export default BookSearch;
+export default BookSearchPage;
